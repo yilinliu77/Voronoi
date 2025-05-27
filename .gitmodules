@@ -1,10 +1,9 @@
-[submodule "external/vcpkg"]
-	path = external/vcpkg
-	url = https://github.com/microsoft/vcpkg
-	branch = 02745e0f4749d1f51d2025824209408f5a6c3614
 [submodule "external/GTE"]
 	path = external/GTE
 	url = https://github.com/davideberly/GeometricTools/
 [submodule "external/vcglib"]
 	path = external/vcglib
 	url = https://github.com/cnr-isti-vclab/vcglib
+[submodule "external/vcpkg"]
+	path = external/vcpkg
+	url = https://github.com/microsoft/vcpkg
