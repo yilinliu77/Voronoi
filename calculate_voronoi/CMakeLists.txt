@@ -22,8 +22,8 @@ endif()
 
 add_executable(${PROJECT_NAME} ${SOURCE_FILE})
 target_include_directories(${PROJECT_NAME} PRIVATE ${OpenCASCADE_INCLUDE_DIR})
-target_include_directories(${PROJECT_NAME} PRIVATE ../../external/GTE/GTE)
-target_include_directories(${PROJECT_NAME} PRIVATE ../../external/vcglib)
+target_include_directories(${PROJECT_NAME} PRIVATE ../external/GTE/GTE)
+target_include_directories(${PROJECT_NAME} PRIVATE ../external/vcglib)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Geogram::geogram)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCASCADE_LIBRARIES})
