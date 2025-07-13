@@ -864,7 +864,7 @@ Point_set_3 sample_points_surface(const TopoDS_Shape& shape, const fs::path& out
             curve->D0(last, ep);
             curve->D0(first+start_step, p);
 			double distance = sp.Distance(p);
-            int try_times = 100000;
+            int try_times = 1000000;
             while (std::abs(distance - target_distance) > 1e-4 && try_times > 0)
             {
                 if (distance < target_distance)
@@ -877,11 +877,16 @@ Point_set_3 sample_points_surface(const TopoDS_Shape& shape, const fs::path& out
             }
             if (try_times == 0)
 			{
+                LOG(ERROR) << start_step;
+                LOG(ERROR) << distance;
+                LOG(ERROR) << length;
+                LOG(ERROR) << sp.X() << ", " << sp.Y() << ", " << sp.Z();
+                LOG(ERROR) << ep.X() << ", " << ep.Y() << ", " << ep.Z();
 				LOG(ERROR) << "Cannot find the start step";
 				throw;
 			}
 
-            try_times = 100000;
+            try_times = 1000000;
             curve->D0(last - end_step, p);
             distance = ep.Distance(p);
             while (std::abs(distance - target_distance) > 1e-4 && try_times > 0)
